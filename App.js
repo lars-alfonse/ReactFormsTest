@@ -16,7 +16,7 @@ export default class App extends React.Component {
         <View style={{flex: .5, alignSelf: 'stretch'}}>
           <Header />
         </View>
-        <View style={{flex: 5, backgroundColor: "skyblue"}}>
+        <View style={{flex: 5, backgroundColor: "skyblue", alignSelf: 'stretch'}}>
           <Form />
         </View>
       </View>

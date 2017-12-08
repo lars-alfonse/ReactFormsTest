@@ -20,28 +20,37 @@ export default class Form extends React.Component {
   	}
 	render(){
 		return(
-			<View>
+			<View style={{flex: 1, justifyContent: 'space-between'}}>
 				<TextInput
-            		placeHolder="Enter Name"
+					style={styles.formTextInput}
+            		placeholder="Enter Name"
+            		placeholderTextColor = 'black'
             		onChangeText={(text) => this.setState({name: text})}
             	>
           		</TextInput>
           		<TextInput
-            		placeHolder="Enter Location"
+          			style={styles.formTextInput}
+            		placeholder="Enter Location"
+            		placeholderTextColor = 'black'
             		onChangeText={(text) => this.setState({address: text})}
           		>
           		</TextInput>
           		<TextInput
-            		placeHolder="Enter Amount"
+          			style={styles.formTextInput}
+            		placeholder="Enter Amount"
+            		placeholderTextColor = 'black'
             		onChangeText={(text) => this.setState({amount: text})}
           		>
           		</TextInput>
           		<TextInput
-            		placeHolder="Enter Message"
+          			style={styles.formTextInput}
+            		placeholder="Enter Message"
+            		placeholderTextColor = 'black'
             		onChangeText={(text) => this.setState({text: text})}
           		>
           		</TextInput>
-          		<Button 
+          		<Button
+          			style={{flex: 1}}
             		onPress={this._submitForm.bind(this)}
             		title="Submit"
           		/>
@@ -49,3 +58,12 @@ export default class Form extends React.Component {
 		);
 	}
 }
+
+const styles = StyleSheet.create({
+  formTextInput: {
+    
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
