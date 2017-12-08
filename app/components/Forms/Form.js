@@ -10,9 +10,6 @@ export default class Form extends React.Component {
                       amount: '',
                      };
 	}
-	static defaultProps{
-		name: 'username'
-	}
 	_submitForm(){
     	let name = this.state.name;
     	let address = this.state.address;
