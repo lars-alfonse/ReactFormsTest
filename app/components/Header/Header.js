@@ -2,6 +2,15 @@ import React, { Component }from 'react';
 import { StyleSheet, Text, TextInput, Button, Alert, View, Image, AppRegistry, form } from 'react-native';
 
 export default class Header extends React.Component {
+	constructor(props){
+		super(props);
+		this.state={
+			navBarSpacing: 0,
+		}
+	}
+	componentDidMount(){
+		this.setState({navBarSpacing: Expo.Constants.statusBarHeight})
+	}
 	_buttonOne(){
 		Alert.alert("Button One");
 	}
@@ -13,7 +22,7 @@ export default class Header extends React.Component {
 	}
 	render(){
 		return(
-			<View style={{flex: 1, flexDirection: 'row', alignSelf: 'stretch', justifyContent:'space-between', backgroundColor: 'black', paddingTop: Expo.Constants.statusBarHeight}}>
+			<View style={{flex: 1, flexDirection: 'row', alignSelf: 'stretch', justifyContent:'space-between', backgroundColor: 'black', paddingTop: this.state.navBarSpacing}}>
 				<Button 
 					style={styles.headerButton}
             		onPress={this._buttonOne.bind(this)}
