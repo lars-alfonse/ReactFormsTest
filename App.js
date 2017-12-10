@@ -1,5 +1,6 @@
 import React, { Component }from 'react';
 import { StyleSheet, Text, TextInput, Button, Alert, View, Image, AppRegistry, form } from 'react-native';
+import { StackNavigator } from 'react-navigation';
 
 import Form from './app/components/Forms/Form';
 import Header from './app/components/Header/Header';
@@ -9,6 +10,9 @@ export default class App extends React.Component {
     super(props);
     this.state = {text: '',
                    };
+  }
+  static navigationOptions = {
+    title: 'Home',
   }
   render() {
     return (
@@ -31,5 +35,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     alignSelf: 'stretch',
     justifyContent: 'center',
+  },
+});
+const Stack = StackNavigator({
+  Home: {
+    screen: App,
   },
 });
