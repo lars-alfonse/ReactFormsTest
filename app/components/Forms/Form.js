@@ -20,32 +20,36 @@ export default class Form extends React.Component {
   	}
 	render(){
 		return(
-			<View style={{flex: 1, justifyContent: 'space-between'}}>
+			<View style={{flex: 1, alignItems: 'center'}}>
 				<TextInput
 					style={styles.formTextInput}
             		placeholder="Enter Name"
-            		placeholderTextColor = 'black'
+            		underlineColorAndroid="transparent"
+            		placeholderTextColor = 'gray'
             		onChangeText={(text) => this.setState({name: text})}
             	>
           		</TextInput>
           		<TextInput
           			style={styles.formTextInput}
             		placeholder="Enter Location"
-            		placeholderTextColor = 'black'
+            		underlineColorAndroid="transparent"
+            		placeholderTextColor = 'gray'
             		onChangeText={(text) => this.setState({address: text})}
           		>
           		</TextInput>
           		<TextInput
           			style={styles.formTextInput}
             		placeholder="Enter Amount"
-            		placeholderTextColor = 'black'
+            		underlineColorAndroid="transparent"
+            		placeholderTextColor = 'gray'
             		onChangeText={(text) => this.setState({amount: text})}
           		>
           		</TextInput>
           		<TextInput
           			style={styles.formTextInput}
             		placeholder="Enter Message"
-            		placeholderTextColor = 'black'
+            		underlineColorAndroid="transparent"
+            		placeholderTextColor = 'gray'
             		onChangeText={(text) => this.setState({text: text})}
           		>
           		</TextInput>
@@ -61,7 +65,14 @@ export default class Form extends React.Component {
 
 const styles = StyleSheet.create({
   formTextInput: {
-    
+  	textAlign: 'center',
+    borderColor: 'black',
+    borderRadius: 4,
+    borderWidth: 1,
+    height: 37,
+    marginVertical: 10,
+    textDecorationLine: 'none', 
+    width: 225,	
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',

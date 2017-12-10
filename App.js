@@ -13,7 +13,7 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style={{flex: .5, alignSelf: 'stretch'}}>
+        <View style={{flex: .7, alignSelf: 'stretch'}}>
           <Header />
         </View>
         <View style={{flex: 5, backgroundColor: "skyblue", alignSelf: 'stretch'}}>
