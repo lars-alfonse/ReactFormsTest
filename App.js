@@ -4,41 +4,25 @@ import { StackNavigator } from 'react-navigation';
 
 import Form from './app/components/Forms/Form';
 import Header from './app/components/Header/Header';
+import Home from './app/components/Home/Home';
 
-export default class App extends React.Component {
-  constructor(props){
-    super(props);
-    this.state = {text: '',
-                   };
-  }
-  static navigationOptions = {
-    title: 'Home',
-  }
-  render() {
-    return (
-      <View style={styles.container}>
-        <View style={{flex: .7, alignSelf: 'stretch'}}>
-          <Header />
-        </View>
-        <View style={{flex: 5, backgroundColor: "skyblue", alignSelf: 'stretch'}}>
-          <Form />
-        </View>
-      </View>
-    );
-  }
-}
+
+
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#fdd9a5',
     alignItems: 'center',
     alignSelf: 'stretch',
     justifyContent: 'center',
   },
 });
-const Stack = StackNavigator({
+export default StackNavigator({
   Home: {
-    screen: App,
+    screen: Home,
+  },
+  Form: {
+    screen: Form,
   },
 });

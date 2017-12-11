@@ -1,5 +1,7 @@
 import React, { Component }from 'react';
 import { StyleSheet, Text, TextInput, Button, Alert, View, Image, AppRegistry, form } from 'react-native';
+import { StackNavigator } from 'react-navigation';
+
 
 export default class Form extends React.Component {
 	constructor(props){
@@ -10,6 +12,10 @@ export default class Form extends React.Component {
                       amount: '',
                      };
 	}
+	static navigationOptions = {
+    	title: 'Form',
+  	}
+
 	_submitForm(){
     	let name = this.state.name;
     	let address = this.state.address;
