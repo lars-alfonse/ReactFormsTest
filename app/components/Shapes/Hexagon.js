@@ -5,36 +5,44 @@ import { StackNavigator } from 'react-navigation';
 import Form from '../Forms/Form';
 import Header from '../Header/Header';
 
+
 export default class Hexagon extends React.Component {
-	
-  constructor(props){
-    super(props);
-    this.state = {text: '',
-                   };
-  }
-  _hextouch = () =>{
-  	Alert.alert("From HEXAGON: Hello World");
-  }
+
+  	constructor(props){
+    	super(props);
+  	}
+  	componentDidMount(){
+		this.setState({navBarSpacing: Expo.Constants.statusBarHeight})
+  	}
+  	static navigationOptions = {
+    	title: 'BeeForm',
+    	headerStyle: { backgroundColor: 'deepskyblue', marginTop: Expo.Constants.statusBarHeight,}
+  	}
+  	_navbutton = () => {
+    	this.props.navigation.navigate('Form');
+  	}
   render() {
-  	
+    //const { navigate } = this.props.navigation;
     return (
-   		<TouchableOpacity onPress={this._hextouch} style={{height:300, width: 250, justifyContent: 'center'}}>
-  	  		<View style={styles.hexagon}>
-        		<View style={styles.hexagonInner} />
-        		<View style={styles.hexagonBefore} />
-        		<View style={styles.hexagonAfter} />
-        		<Text> Press</Text>
-      		</View>
-      	</TouchableOpacity>		
+  	  	<View style={styles.hexagon}>
+        	<View style={styles.hexagonInner} />
+        	<View style={styles.hexagonBefore} />
+        	<View style={styles.hexagonAfter} />
+        	<Text style={styles.buttonText}> Press</Text>
+      	</View>	
     );
   }
 }
 
 const styles = StyleSheet.create({
-
+  buttonText: {
+  	position: 'absolute',
+  	top: 15,
+  },
   hexagon: {
     width: 100,
-    height: 55
+    height: 55,
+    alignItems: 'center',
   },
   hexagonInner: {
     width: 100,
