@@ -6,6 +6,7 @@ import Form from './app/components/Forms/Form';
 import Header from './app/components/Header/Header';
 import Home from './app/components/Home/Home';
 import Hexagon from './app/components/Shapes/Hexagon';
+import Auth from './app/components/Auth/Auth';
 import { Security, ImplicitCallback } from '@okta/okta-react';
 
 const config = {
